@@ -13,6 +13,12 @@ class ViewController: UIViewController {
     
     var testData: [String] = ["a", "b", "c", "d"]
     
+    var fileData: [[String]] = []
+    // ダウンロードしたcsvファイルを保存する変数
+    var csvString = ""
+    
+    let pathURL = NSURL(string: "https://ckan.open-governmentdata.org/dataset/44e3a1d9-e1fa-4ed8-ba6e-114b716d3b38/resource/0b925907-32be-4e64-a1f6-56e6f6381810/download/fukuoka_2020buhinnerai.csv")
+    
     
     
     override func viewDidLoad() {
@@ -21,8 +27,18 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "cellID")
+        
+        do {
+            csvString = try NSString(contentsOf: pathURL! as URL, encoding: String.Encoding.shiftJIS.rawValue) as String
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        
+        csvString.enumerateLines { (line, stop) -> () in
+            self.fileData.append(line.components(separatedBy: ","))
+            print(self.csvString)
+        }
     }
-    
 }
 
 
@@ -30,12 +46,12 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return testData.count
+        return fileData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cellID") as? CustomCell {
-            cell.dataLabel?.text = testData[indexPath.row]
+            cell.dataLabel?.text = fileData[indexPath.row].description
             return cell
         }
         return UITableViewCell()
