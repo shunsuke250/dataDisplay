@@ -16,6 +16,8 @@
 		ABB3E0F32868205D00327063 /* dataDisplayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB3E0F22868205D00327063 /* dataDisplayTests.swift */; };
 		ABB3E0FD2868205D00327063 /* dataDisplayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB3E0FC2868205D00327063 /* dataDisplayUITests.swift */; };
 		ABB3E0FF2868205D00327063 /* dataDisplayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB3E0FE2868205D00327063 /* dataDisplayUITestsLaunchTests.swift */; };
+		ABBB7B66286826FA00CE57AB /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBB7B64286826FA00CE57AB /* CustomCell.swift */; };
+		ABBB7B67286826FA00CE57AB /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABBB7B65286826FA00CE57AB /* CustomCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		ABB3E0F82868205D00327063 /* dataDisplayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dataDisplayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABB3E0FC2868205D00327063 /* dataDisplayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataDisplayUITests.swift; sourceTree = "<group>"; };
 		ABB3E0FE2868205D00327063 /* dataDisplayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataDisplayUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ABBB7B64286826FA00CE57AB /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		ABBB7B65286826FA00CE57AB /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +105,8 @@
 			children = (
 				ABB3E0DB2868205D00327063 /* AppDelegate.swift */,
 				ABB3E0DD2868205D00327063 /* SceneDelegate.swift */,
-				ABB3E0DF2868205D00327063 /* ViewController.swift */,
-				ABB3E0E12868205D00327063 /* Main.storyboard */,
+				ABBB7B682868272700CE57AB /* Controllers */,
+				ABBB7B63286826BC00CE57AB /* View */,
 				ABB3E0E42868205D00327063 /* Assets.xcassets */,
 				ABB3E0E62868205D00327063 /* LaunchScreen.storyboard */,
 				ABB3E0E92868205D00327063 /* Info.plist */,
@@ -125,6 +129,24 @@
 				ABB3E0FE2868205D00327063 /* dataDisplayUITestsLaunchTests.swift */,
 			);
 			path = dataDisplayUITests;
+			sourceTree = "<group>";
+		};
+		ABBB7B63286826BC00CE57AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ABB3E0E12868205D00327063 /* Main.storyboard */,
+				ABBB7B64286826FA00CE57AB /* CustomCell.swift */,
+				ABBB7B65286826FA00CE57AB /* CustomCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ABBB7B682868272700CE57AB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ABB3E0DF2868205D00327063 /* ViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +255,7 @@
 			files = (
 				ABB3E0E82868205D00327063 /* LaunchScreen.storyboard in Resources */,
 				ABB3E0E52868205D00327063 /* Assets.xcassets in Resources */,
+				ABBB7B67286826FA00CE57AB /* CustomCell.xib in Resources */,
 				ABB3E0E32868205D00327063 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +283,7 @@
 			files = (
 				ABB3E0E02868205D00327063 /* ViewController.swift in Sources */,
 				ABB3E0DC2868205D00327063 /* AppDelegate.swift in Sources */,
+				ABBB7B66286826FA00CE57AB /* CustomCell.swift in Sources */,
 				ABB3E0DE2868205D00327063 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,7 +474,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.shunsuke-soeyama.dataDisplay";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shunsuke-soeyama.dataDisplay20220626";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -478,7 +502,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.shunsuke-soeyama.dataDisplay";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shunsuke-soeyama.dataDisplay20220626";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
