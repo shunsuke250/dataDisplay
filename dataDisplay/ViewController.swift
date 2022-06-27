@@ -16,8 +16,8 @@ class ViewController: UIViewController {
     // ダウンロードしたcsvファイルを保存する変数
     var csvString = ""
     
-    let pathURL = NSURL(string: "https://fukuokakenblob.blob.core.windows.net/corona-public/400009_pref_fukuoka_covid19_youseisya.csv")
-//    let pathURL = NSURL(string: "https://ckan.open-governmentdata.org/dataset/44e3a1d9-e1fa-4ed8-ba6e-114b716d3b38/resource/0b925907-32be-4e64-a1f6-56e6f6381810/download/fukuoka_2020buhinnerai.csv")
+//    let pathURL = NSURL(string: "https://fukuokakenblob.blob.core.windows.net/corona-public/400009_pref_fukuoka_covid19_youseisya.csv")
+    let pathURL = NSURL(string: "https://ckan.open-governmentdata.org/dataset/44e3a1d9-e1fa-4ed8-ba6e-114b716d3b38/resource/0b925907-32be-4e64-a1f6-56e6f6381810/download/fukuoka_2020buhinnerai.csv")
     
     
     var lineIndex = 1
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         tableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "cellID")
         
         do {
-            csvString = try NSString(contentsOf: pathURL! as URL, encoding: String.Encoding.utf8.rawValue) as String
+            csvString = try NSString(contentsOf: pathURL! as URL, encoding: String.Encoding.shiftJIS.rawValue) as String
         } catch let error as NSError {
             print(error.localizedDescription)
         }
